@@ -1,0 +1,21 @@
+# Reverse a linked list
+#eg: 1 2 3 4 5
+     5 4 3 2 1
+public class Solution 
+{
+    public static LinkedListNode<Integer> reverseLinkedList(LinkedListNode<Integer> head) 
+    {
+        // Write your code here!
+        LinkedListNode prev=null;
+        LinkedListNode curr=head;
+        while(curr!=null){
+            LinkedListNode temp=curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr=temp;
+        }
+        //head.next=null;
+        head=prev;
+        return head;
+    }
+}
